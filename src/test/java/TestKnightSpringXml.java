@@ -1,3 +1,9 @@
+import Study.CleanSoldierQuestInterface;
+import Study.GangkQuestInterface;
+import Study.JungleKnightInterface;
+import Study.KnightInterface;
+import Study.QuestInterface;
+import Study.TopKnightInterface;
 import org.testng.annotations.Test;
 
 import java.io.PrintStream;
@@ -10,12 +16,12 @@ public class TestKnightSpringXml {
     @Test
     public void testKnight()
     {
-        Quest soldierQuest = new CleanSoldierQuest();
-        Quest gangkQuest = new GangkQuest();
-        Knight jungleKnight = new JungleKnight(soldierQuest);
-        Knight topKnight = new TopKnight(gangkQuest);
+        QuestInterface soldierQuest = new CleanSoldierQuestInterface();
+        QuestInterface gangkQuest = new GangkQuestInterface();
+        KnightInterface jungleKnight = new JungleKnightInterface(gangkQuest);
+        KnightInterface topKnight = new TopKnightInterface(soldierQuest);
 
-        jungleKnight.emarkOnQuest();
-        topKnight.emarkOnQuest();
+        jungleKnight.embarkOnQuest();
+        topKnight.embarkOnQuest();
     }
 }
