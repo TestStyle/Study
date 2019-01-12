@@ -13,33 +13,20 @@ import soundsystem.MediaPlayer;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = CDPlayConfig.class)
-public class CDPlayerTest {
+public class CDPlayerConfigTest {
 
     @Rule
     public final StandardOutputStreamLog log = new StandardOutputStreamLog();
 
-    //@Autowired
+    @Autowired
     private MediaPlayer md;
 
-    //@Autowired
-    private CompactDisc cd;
 
-    //@Test
-    public void cdShouldNotBeNull()
-    {
-        Assert.assertNotNull(cd);
-    }
-
-    //@Test
+    @Test
     public void play()
     {
         md.play();
-        Assert.assertEquals(
-                "01菊花台\\n02夜曲",
-                log.getLog()
-        );
-
-
+        md.play();
     }
     //@Test
     public void testCDPlayerConfig_CD()
